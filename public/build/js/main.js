@@ -85,7 +85,7 @@ if (window.location.pathname === '/') {
     const messageInputs = Array.from(document.querySelectorAll("#messageForm .val-message"));
     const submitMessage = document.querySelector("#submitMessage");
     let alphabeticCheck = /^[a-zA-ZÀ-ÿ\s]{3,21}$/;
-    let alphabeticCheckLong = /^[a-zA-ZÀ-ÿ\s]{21,210}$/;
+    let alphabeticCheckLong = /^[a-zA-ZÀ-ÿ\s]{21,420}$/;
 
     window.addEventListener("load", cleanMessageForm);
 

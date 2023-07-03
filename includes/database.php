@@ -1,6 +1,6 @@
 <?php
 
-    $db = mysqli_connect('localhost', 'root', '', 'tpintegrador');
+    $db = mysqli_connect('localhost', 'id20995045_root', 'Backend-23', 'id20995045_tpintegrador');
 
 
     if(!$db) {
