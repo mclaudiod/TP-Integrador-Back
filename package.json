@@ -1,0 +1,8 @@
+{
+  "name": "tpintegrador-php-mvc-mysql",
+  "version": "1.0.0",
+  "description": "Trabajo Práctico Integrador Codo a Codo 4.0",
+  "main": "main.js",
+  "author": "Claudio Morales",
+  "license": "ISC"
+}
