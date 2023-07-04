@@ -2,7 +2,7 @@
     <nav id="nav" class="navbar bg-dark navbar-expand-xl fixed-top container-fluid" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand col-6 col-md-4 col-xl-2 fs-5" href="#">
-                <img src="/public/build/img/codoacodo.png" alt="Logo" class="w-50 img-fluid">
+                <img src="/build/img/codoacodo.png" alt="Logo" class="w-50 img-fluid">
                 Conf Bs As
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,13 +42,13 @@
 
         <div class="carousel-inner position-absolute vh-100 z-n1">
             <div class="carousel-item active">
-                <img src="/public/build/img/ba1.jpg" class="d-block carousel-img" alt="Imagen Buenos Aires 1">
+                <img src="/build/img/ba1.jpg" class="d-block carousel-img" alt="Imagen Buenos Aires 1">
             </div>
             <div class="carousel-item">
-                <img src="/public/build/img/ba2.jpg" class="d-block carousel-img" alt="Imagen Buenos Aires 2">
+                <img src="/build/img/ba2.jpg" class="d-block carousel-img" alt="Imagen Buenos Aires 2">
             </div>
             <div class="carousel-item">
-                <img src="/public/build/img/ba3.jpg" class="d-block carousel-img" alt="Imagen Buenos Aires 3">
+                <img src="/build/img/ba3.jpg" class="d-block carousel-img" alt="Imagen Buenos Aires 3">
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@
         <div class="row">
             <div class="col-md-4 mb-3 mb-md-0">
                 <div class="card h-100">
-                    <img src="/public/build/img/steve.jpg" class="card-img-top mb-2" alt="Imagen Steve Jobs">
+                    <img src="/build/img/steve.jpg" class="card-img-top mb-2" alt="Imagen Steve Jobs">
                     <div class="card-body">
                         <span class="badge text-bg-warning">JavaScript</span>
                         <span class="badge text-bg-info text-white">React</span>
@@ -78,7 +78,7 @@
 
             <div class="col-md-4 mb-3 mb-md-0">
                 <div class="card h-100">
-                    <img src="/public/build/img/bill.jpg" class="card-img-top mb-2" alt="Imagen Bill Gates">
+                    <img src="/build/img/bill.jpg" class="card-img-top mb-2" alt="Imagen Bill Gates">
                     <div class="card-body">
                         <span class="badge text-bg-warning">JavaScript</span>
                         <span class="badge text-bg-info text-white">React</span>
@@ -90,7 +90,7 @@
 
             <div class="col-md-4">
                 <div class="card h-100">
-                    <img src="/public/build/img/ada.jpeg" class="card-img-top mb-2" alt="Imagen Ada Lovelace">
+                    <img src="/build/img/ada.jpeg" class="card-img-top mb-2" alt="Imagen Ada Lovelace">
                     <div class="card-body">
                         <span class="badge text-bg-secondary">Negocios</span>
                         <span class="badge text-bg-danger">Startups</span>
@@ -106,7 +106,7 @@
 <section id="lugar">
     <div class="bg-dark d-flex flex-column flex-xl-row mt-4">
         <div class="col-xl-6">
-            <img class="img-fluid" src="/public/build/img/honolulu.jpg" alt="Imagen Honolulu">
+            <img class="img-fluid" src="/build/img/honolulu.jpg" alt="Imagen Honolulu">
         </div>
 
         <div class="text-white m-3">
