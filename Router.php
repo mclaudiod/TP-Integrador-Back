@@ -18,15 +18,16 @@
 
             session_start();
 
-            $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
+            // $currentUrl initially returned something like "/public_html/tickets" from $_SERVER['PATH_INFO']
+            // this revised code removes "/public_html", so that the route can be found properly
+            $currentUrl = $_SERVER['PATH_INFO'] ? str_replace("/public_html", "", $_SERVER['PATH_INFO']) : '/';
             $method = $_SERVER['REQUEST_METHOD'];
-
+            
             if ($method === 'GET') {
                 $fn = $this->getRoutes[$currentUrl] ?? null;
             } else {
                 $fn = $this->postRoutes[$currentUrl] ?? null;
             }
-
 
             if ( $fn ) {
 
