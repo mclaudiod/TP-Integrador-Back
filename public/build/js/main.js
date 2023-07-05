@@ -1,17 +1,25 @@
-if (window.location.pathname === '/' || window.location.pathname === '/tickets/edit') {
+if (window.location.pathname === '/') {
     const ticketInputs = Array.from(document.querySelectorAll("#ticketForm .val"));
+    const messageInputs = Array.from(document.querySelectorAll("#messageForm .val-message"));
     const categoryTicket = document.querySelector("#category-ticket");
     const totalSpan = document.querySelector("#total-ticket");
     const submitTicket = document.querySelector("#submitTicket");
+    const submitMessage = document.querySelector("#submitMessage");
     let alphabeticCheck = /^[a-zA-ZÀ-ÿ\s]{3,21}$/;
+    let alphabeticCheckLong = /^[a-zA-ZÀ-ÿ\s]{21,420}$/;
     let emailCheck = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     let total = 0;
     let ticket = 200;
 
     window.addEventListener("load", cleanTicketForm);
+    window.addEventListener("load", cleanMessageForm);
 
     ticketInputs.forEach((ticketInput) => {
         ticketInput.addEventListener("input", validateInput);
+    });
+
+    messageInputs.forEach((messageInput) => {
+        messageInput.addEventListener("input", validateMessageInput);
     });
 
     categoryTicket.addEventListener("change", totalToPay);
@@ -55,6 +63,30 @@ if (window.location.pathname === '/' || window.location.pathname === '/tickets/e
                 break;
         };
 
+        function validateMessageInput(event) {
+            const input = event.target;
+            const value = input.value;
+    
+            switch (input.id) {
+                case "name":
+                case "surname":
+                    input.classList.toggle("is-valid", alphabeticCheck.test(value));
+                    input.classList.toggle("is-invalid", !alphabeticCheck.test(value));
+                    break;
+                case "textarea":
+                    input.classList.toggle("is-valid", alphabeticCheckLong.test(value));
+                    input.classList.toggle("is-invalid", !alphabeticCheckLong.test(value));
+                    break;
+            };
+    
+            const allMessageInputsValid =
+                messageInputs[0].classList.contains("is-valid") &&
+                messageInputs[1].classList.contains("is-valid") &&
+                messageInputs[2].classList.contains("is-valid");
+    
+            submitMessage.disabled = !allMessageInputsValid;
+        };
+
         const allInputsValid =
             ticketInputs[0].classList.contains("is-valid") &&
             ticketInputs[1].classList.contains("is-valid") &&
@@ -78,43 +110,6 @@ if (window.location.pathname === '/' || window.location.pathname === '/tickets/e
         categoryTicket.value = "general";
         totalToPay();
         submitTicket.disabled = true;
-    };
-};
-
-if (window.location.pathname === '/') {
-    const messageInputs = Array.from(document.querySelectorAll("#messageForm .val-message"));
-    const submitMessage = document.querySelector("#submitMessage");
-    let alphabeticCheck = /^[a-zA-ZÀ-ÿ\s]{3,21}$/;
-    let alphabeticCheckLong = /^[a-zA-ZÀ-ÿ\s]{21,420}$/;
-
-    window.addEventListener("load", cleanMessageForm);
-
-    messageInputs.forEach((messageInput) => {
-        messageInput.addEventListener("input", validateMessageInput);
-    });
-
-    function validateMessageInput(event) {
-        const input = event.target;
-        const value = input.value;
-
-        switch (input.id) {
-            case "name":
-            case "surname":
-                input.classList.toggle("is-valid", alphabeticCheck.test(value));
-                input.classList.toggle("is-invalid", !alphabeticCheck.test(value));
-                break;
-            case "textarea":
-                input.classList.toggle("is-valid", alphabeticCheckLong.test(value));
-                input.classList.toggle("is-invalid", !alphabeticCheckLong.test(value));
-                break;
-        };
-
-        const allMessageInputsValid =
-            messageInputs[0].classList.contains("is-valid") &&
-            messageInputs[1].classList.contains("is-valid") &&
-            messageInputs[2].classList.contains("is-valid");
-
-        submitMessage.disabled = !allMessageInputsValid;
     };
 
     function cleanMessageForm() {
